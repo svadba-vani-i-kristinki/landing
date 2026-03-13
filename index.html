@@ -981,6 +981,7 @@ document.querySelectorAll('.reveal, .step, .why-card').forEach(el => observer.ob
 // ─── Form mock submit
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
+  ym(107695660, 'reachGoal', 'form_submit');
   this.style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 });
