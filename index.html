@@ -920,8 +920,10 @@ nav.scrolled {
       </div>
 
       <div class="form-card reveal">
-        <h3>Или оставьте номер</h3>
-        <p class="form-hint">Я перезвоню в ближайшее время</p>
+        <div id="formHeader">
+          <h3>Или оставьте номер</h3>
+          <p class="form-hint">Я перезвоню в ближайшее время</p>
+        </div>
 
         <form id="contactForm">
           <input type="hidden" name="access_key" value="1dfe44c6-97f8-4f9e-bfe0-fc282f4252f7">
@@ -999,6 +1001,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
   if (res.ok) {
     this.style.display = 'none';
+    document.getElementById('formHeader').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
   } else {
     btn.disabled = false;
