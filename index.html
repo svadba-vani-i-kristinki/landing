@@ -1011,14 +1011,23 @@ document.getElementById('contactForm').addEventListener('submit', async function
 });
 
 // ─── Burger (mobile)
+const navLinks = document.querySelector('.nav-links');
+
+function closeMenu() {
+  if (navLinks) navLinks.style.cssText = '';
+}
+
 document.getElementById('burger').addEventListener('click', () => {
-  const links = document.querySelector('.nav-links');
-  if (links) {
-    const isVisible = links.style.display === 'flex';
-    links.style.cssText = isVisible
+  if (navLinks) {
+    const isVisible = navLinks.style.display === 'flex';
+    navLinks.style.cssText = isVisible
       ? ''
       : 'display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(13,27,42,0.98);padding:24px;gap:20px;border-bottom:1px solid rgba(201,168,76,0.2);backdrop-filter:blur(12px)';
   }
+});
+
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', closeMenu);
 });
 
 // ─── Stagger cards
