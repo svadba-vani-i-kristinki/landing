@@ -924,6 +924,8 @@ nav.scrolled {
         <p class="form-hint">Я перезвоню в ближайшее время</p>
 
         <form id="contactForm">
+          <input type="hidden" name="access_key" value="1dfe44c6-97f8-4f9e-bfe0-fc282f4252f7">
+          <input type="hidden" name="subject" value="Новая заявка с сайта">
           <div class="form-group">
             <label>Имя</label>
             <input type="text" name="name" placeholder="Как к вам обращаться?" required>
@@ -940,6 +942,9 @@ nav.scrolled {
         </form>
         <div class="form-success" id="formSuccess">
           Спасибо! Я перезвоню вам в ближайшее время.
+        </div>
+        <div class="form-success" id="formError" style="display:none;color:#e57373;">
+          Что-то пошло не так. Попробуйте ещё раз или позвоните напрямую.
         </div>
       </div>
     </div>
@@ -978,11 +983,28 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal, .step, .why-card').forEach(el => observer.observe(el));
 
-// ─── Form mock submit
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// ─── Form submit via Web3Forms
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  this.style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  const btn = this.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Отправляю...';
+
+  const data = Object.fromEntries(new FormData(this));
+  const res = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    this.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  } else {
+    btn.disabled = false;
+    btn.textContent = 'Перезвоните мне';
+    document.getElementById('formError').style.display = 'block';
+  }
 });
 
 // ─── Burger (mobile)
