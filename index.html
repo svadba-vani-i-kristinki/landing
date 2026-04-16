@@ -444,7 +444,8 @@ section { padding: 96px 0; }
 .why-grid .why-card {
   flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 @media (max-width: 900px) {
@@ -912,9 +913,18 @@ nav.scrolled {
       <!-- КАРТОЧКИ -->
       <div class="why-grid">
         <div class="why-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;opacity:0.85">
+            <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19.5 2.5S18 2 16.5 3.5L13 7 4.8 5.2 3.4 6.6l6.6 4.4-3.2 3.2-1.4-.4L4 15l2 1 1 2 1.4-1.4-.4-1.4 3.2-3.2 4.4 6.6 1.4-1.4z"/>
+          </svg>
           <p>Два года в Юридической группе «Стрижак и Партнёры» (входит в топ-10 федерального рейтинга Право.ru 300 в категории «Банкротство»). Сопровождал процедуры банкротства на стороне арбитражных управляющих, включая банкротство авиакомпании. Выиграл спор по утверждению положения о торгах акциями аэропорта.</p>
         </div>
         <div class="why-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;opacity:0.85">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M2 11h20"/>
+            <path d="M7 17v2m10-2v2"/>
+            <path d="M2 7h20"/>
+          </svg>
           <p>Более трёх лет в структуре крупного системообразующего банка. Вёл банкротные процедуры на стороне кредитора, в том числе банкротство крупнейшего в России троллейбусного завода. Добился признания недействительными сделок на миллиарды рублей.</p>
         </div>
       </div>
