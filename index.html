@@ -114,7 +114,51 @@ section { padding: 96px 0; }
   );
 }
 
-#hero .container { position: relative; z-index: 1; max-width: 820px; }
+#hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s ease forwards;
+}
+
+.hero-photo-col img {
+  width: 100%;
+  max-width: 460px;
+  display: block;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+}
+
+.hero-photo-caption {
+  text-align: center;
+  margin-top: -24px;
+}
+
+.hero-photo-caption strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--cream);
+  font-weight: 700;
+}
+
+.hero-photo-caption span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 .hero-eyebrow {
   font-size: 0.75rem;
@@ -677,6 +721,8 @@ nav.scrolled {
   .burger { display: flex; }
 
   .hero-badge { gap: 32px; }
+  #hero .container { grid-template-columns: 1fr; gap: 0; }
+  .hero-photo-col { display: none; }
 
   .contact-grid { gap: 40px; }
 }
@@ -722,24 +768,36 @@ nav.scrolled {
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
   <div class="container">
-    <div class="hero-eyebrow">Арбитражный юрист · Банкротные споры · Москва</div>
-    <h1>Защита от субсидиарной ответственности <em>и</em> оспаривания сделок в&nbsp;банкротстве</h1>
-    <p class="hero-sub">
-     Оценю риски и помогу выстроить защиту в&nbsp;арбитражном суде.
-      <strong>6 лет работал на стороне управляющих и банков-кредиторов</strong> —
-      знаю, как строится позиция против ответчиков и где она уязвима.
-    </p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn">Обсудить мою ситуацию</a>
-    </div>
-    <div class="hero-badge">
-      <div class="hero-stat">
-        <div class="num">6+</div>
-        <div class="label">лет в банкротных спорах</div>
+    <!-- Левая колонка: текст -->
+    <div class="hero-content">
+      <div class="hero-eyebrow">Арбитражный юрист · Банкротные споры · Москва</div>
+      <h1>Защита от субсидиарной ответственности <em>и</em> оспаривания сделок в&nbsp;банкротстве</h1>
+      <p class="hero-sub">
+       Оценю риски и помогу выстроить защиту в&nbsp;арбитражном суде.
+        <strong>6 лет работал на стороне управляющих и банков-кредиторов</strong> —
+        знаю, как строится позиция против ответчиков и где она уязвима.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Обсудить мою ситуацию</a>
       </div>
-      <div class="hero-stat">
-        <div class="num">80+</div>
-        <div class="label">выигранных дел</div>
+      <div class="hero-badge">
+        <div class="hero-stat">
+          <div class="num">6+</div>
+          <div class="label">лет в банкротных спорах</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">80+</div>
+          <div class="label">выигранных дел</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Правая колонка: фото -->
+    <div class="hero-photo-col">
+      <img src="photo.png?v=2" alt="Иван Злобин">
+      <div class="hero-photo-caption">
+        <strong>Иван Злобин</strong>
+        <span>Юрист по банкротным спорам</span>
       </div>
     </div>
   </div>
