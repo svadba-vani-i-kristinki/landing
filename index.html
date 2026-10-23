@@ -16,25 +16,27 @@
 <!-- /Yandex.Metrika counter -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Защита в банкротных спорах — Иван Злобин</title>
-<meta name="description" content="Защита ответчиков в спорах о субсидиарной ответственности и оспаривании сделок. Арбитражный суд. Бесплатная оценка ситуации.">
+<title>Юрист по банкротным спорам — Иван Злобин</title>
+<meta name="description" content="Взыскание долгов через банкротство, защита от субсидиарной ответственности и оспаривания сделок, другие банкротные споры в арбитражном суде. Бесплатная оценка ситуации.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Geologica:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --navy: #0D1B2A;
-  --navy-mid: #152336;
-  --navy-light: #1E3352;
-  --gold: #C9A84C;
-  --gold-light: #E2C47A;
-  --cream: #F5F0E8;
-  --text: #E8E4DC;
-  --text-muted: #8FA3B8;
-  --border: rgba(201, 168, 76, 0.2);
-  --radius: 4px;
+  --bg: #F7F5F0;
+  --surface: #FFFFFF;
+  --alt: #EEEBE4;
+  --ink: #141A21;
+  --muted: #5A636D;
+  --line: #DCD7CD;
+  --accent: #1D4A5C;
+  --accent-dark: #133543;
+  --accent-soft: #DCE6E8;
+  --on-accent: #F3F6F7;
+  --on-accent-muted: #A9BFC7;
+  --radius: 6px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,608 +44,56 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--navy);
-  color: var(--text);
-  font-family: 'Geologica', sans-serif;
-  font-weight: 300;
-  line-height: 1.7;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Onest', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ─── TYPOGRAPHY ─── */
-h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
-h1 { font-size: clamp(2rem, 5vw, 3.6rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); }
-h3 { font-size: 1.15rem; font-weight: 600; font-family: 'Geologica', sans-serif; }
+h1, h2, h3 { font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 760px; }
+h3 { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; }
 
 /* ─── LAYOUT ─── */
-.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-section { padding: 96px 0; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+section { padding: 104px 0; scroll-margin-top: 40px; }
+.section-alt { background: var(--alt); }
 
-/* ─── GOLD LINE DECORATION ─── */
 .section-label {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-.section-label::before {
-  content: '';
-  display: inline-block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-/* ─── HERO ─── */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  padding: 120px 0 80px;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 60% at 80% 40%, rgba(30, 51, 82, 0.7) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
-}
-
-.hero-lines {
-  position: absolute;
-  top: 0; right: 0;
-  width: 45%;
-  height: 100%;
-  opacity: 0.04;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--gold) 0px,
-    var(--gold) 1px,
-    transparent 1px,
-    transparent 60px
-  );
-}
-
-#hero .container {
-  position: relative;
-  z-index: 1;
-  max-width: 1080px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 60px;
-}
-
-.hero-photo-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self: flex-start;
-  margin-top: -40px;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.5s ease forwards;
-}
-
-.hero-photo-col img {
-  width: 100%;
-  max-width: 460px;
-  display: block;
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
-  mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
-}
-
-.hero-photo-caption {
-  text-align: center;
-  margin-top: -24px;
-}
-
-.hero-photo-caption strong {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  color: var(--cream);
-  font-weight: 700;
-}
-
-.hero-photo-caption span {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hero-eyebrow {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.2s ease forwards;
-}
-
-#hero h1 {
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.4s ease forwards;
-}
-
-#hero h1 em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.hero-sub {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  max-width: 560px;
-  margin-bottom: 48px;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.6s ease forwards;
-}
-
-.hero-sub strong {
-  color: var(--text);
-  font-weight: 500;
-}
-
-.btn {
-  display: inline-block;
-  padding: 16px 36px;
-  background: var(--gold);
-  color: var(--navy);
-  font-family: 'Geologica', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  border-radius: var(--radius);
-}
-.btn:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-.btn-outline {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--border);
-  margin-left: 16px;
-}
-.btn-outline:hover { background: rgba(201,168,76,0.08); transform: translateY(-2px); }
-
-.hero-cta {
-  opacity: 0;
-  animation: fadeUp 0.8s 0.8s ease forwards;
+  color: var(--accent);
+  margin-bottom: 14px;
 }
 
-.hero-badge {
-  margin-top: 64px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 0.8s 1s ease forwards;
-}
-
-.hero-stat { }
-.hero-stat .num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--gold);
-  line-height: 1;
-}
-.hero-stat .label {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-  font-weight: 400;
-}
-
-/* ─── ABOUT SECTION ─── */
-#about {
-  background: var(--navy-mid);
-  position: relative;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-
-.about-text p { color: var(--text-muted); margin-bottom: 16px; }
-.about-text p strong { color: var(--text); font-weight: 500; }
-
-.about-callout {
-  background: var(--navy-light);
-  border-left: 3px solid var(--gold);
-  padding: 28px 32px;
-  border-radius: 0 var(--radius) var(--radius) 0;
-}
-.about-callout p {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--cream);
-  line-height: 1.5;
-}
-
-/* ─── FOR YOU SECTION ─── */
-#for-you { }
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-  margin-top: 48px;
-}
-
-.card {
-  background: var(--navy-mid);
-  padding: 36px 32px;
-  border: 1px solid transparent;
-  transition: border-color 0.3s, background 0.3s;
-  position: relative;
-}
-.card:hover {
-  border-color: var(--border);
-  background: var(--navy-light);
-}
-
-.card-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 900;
-  color: rgba(201,168,76,0.12);
-  line-height: 1;
-  margin-bottom: 16px;
-}
-
-.card h3 { margin-bottom: 10px; color: var(--cream); }
-.card p { color: var(--text-muted); font-size: 0.92rem; }
-
-.warning-box {
-  margin-top: 40px;
-  padding: 28px 36px;
-  background: var(--navy-mid);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-.warning-icon { flex-shrink: 0; margin-top: 3px; color: var(--gold); }
-.warning-box p { color: var(--text-muted); font-size: 0.95rem; }
-.warning-box p strong { color: var(--text); font-weight: 500; }
-
-/* ─── SERVICES ─── */
-#services { background: var(--navy-mid); }
-
-.steps { margin-top: 48px; }
-
-.step {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 0 32px;
-  padding: 32px 0;
-  border-bottom: 1px solid var(--border);
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s, transform 0.6s;
-}
-.step.visible { opacity: 1; transform: translateY(0); }
-.step:last-child { border-bottom: none; }
-
-.step-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--gold);
-  opacity: 0.5;
-  padding-top: 4px;
-}
-.step-body h3 { margin-bottom: 8px; color: var(--cream); font-size: 1.05rem; }
-.step-body p { color: var(--text-muted); font-size: 0.92rem; }
-
-/* ─── WHY ME ─── */
-#why { }
-
-.why-layout {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 64px;
-  margin-top: 48px;
-  align-items: start;
-}
-
-.why-photo-wrap {
-  position: sticky;
-  top: 100px;
-}
-
-.why-photo {
-  width: 100%;
-  aspect-ratio: 3/4;
-  background: var(--navy-mid);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  position: relative;
-}
-
-.why-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-}
-
-.why-photo-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--text-muted);
-}
-
-.why-photo-placeholder svg {
-  opacity: 0.3;
-}
-
-.why-photo-placeholder span {
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.4;
-}
-
-.why-photo-caption {
-  margin-top: 16px;
-  text-align: center;
-}
-
-.why-photo-caption strong {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  color: var(--cream);
-}
-
-.why-photo-caption span {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  align-content: stretch;
-}
-.why-grid .why-card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-@media (max-width: 900px) {
-  .why-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .why-photo-wrap {
-    position: static;
-    max-width: 260px;
-    margin: 0 auto;
-  }
-}
-
-.why-card {
-  padding: 36px 32px;
-  background: var(--navy-mid);
-  border-radius: var(--radius);
-  border-top: 3px solid var(--gold);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-.why-card.visible { opacity: 1; transform: translateY(0); }
-.why-card h3 { margin-bottom: 16px; color: var(--cream); }
-.why-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.75; }
-.why-card-conclusion {
-  padding: 28px 32px;
-  border-radius: var(--radius);
-  border: 1px solid var(--gold);
-  background: rgba(201, 168, 76, 0.05);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-.why-card-conclusion.visible { opacity: 1; transform: translateY(0); }
-.why-card-conclusion p { color: var(--cream); font-size: 0.95rem; line-height: 1.75; }
-
-/* ─── HOW TO START ─── */
-#how { background: var(--navy-mid); }
-
-.how-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 48px;
-  position: relative;
-}
-
-.how-step {
-  background: var(--navy);
-  padding: 40px 36px;
-  position: relative;
-}
-
-.how-num {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 24px;
-}
-
-.how-step h3 { margin-bottom: 12px; color: var(--cream); }
-.how-step p { color: var(--text-muted); font-size: 0.9rem; }
-
-/* ─── CONTACT ─── */
-#contact { }
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  margin-top: 48px;
-}
-
-.contact-info h3 { margin-bottom: 20px; color: var(--cream); }
-.contact-info p { color: var(--text-muted); margin-bottom: 32px; font-size: 0.95rem; }
-
-.contact-links { display: flex; flex-direction: column; gap: 16px; }
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: var(--text);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-.contact-link:hover { color: var(--gold); }
-.contact-link-icon {
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  transition: border-color 0.2s, background 0.2s;
-}
-.contact-link:hover .contact-link-icon {
-  border-color: var(--gold);
-  background: rgba(201,168,76,0.08);
-}
-
-/* ─── FORM ─── */
-.form-card {
-  background: var(--navy-mid);
-  padding: 48px 40px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-}
-
-.form-card h3 { margin-bottom: 8px; color: var(--cream); }
-.form-card .form-hint { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 28px; }
-
-.form-group { margin-bottom: 16px; }
-.form-group label {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  background: var(--navy);
-  border: 1px solid rgba(143,163,184,0.2);
-  border-radius: var(--radius);
-  color: var(--text);
-  font-family: 'Geologica', sans-serif;
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: inherit;
   font-size: 0.95rem;
-  font-weight: 300;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--gold);
-}
-.form-group textarea { height: 100px; resize: none; }
-
-.form-submit { width: 100%; margin-top: 8px; }
-
-.form-success {
-  display: none;
-  text-align: center;
-  padding: 24px;
-  color: var(--gold);
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-}
-
-/* ─── FOOTER ─── */
-footer {
-  background: var(--navy);
-  border-top: 1px solid var(--border);
-  padding: 40px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-name {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: var(--cream);
-}
-.footer-name span { color: var(--gold); }
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-}
-.footer-links a {
-  color: var(--text-muted);
+  font-weight: 600;
   text-decoration: none;
-  font-size: 0.88rem;
-  transition: color 0.2s;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
-.footer-links a:hover { color: var(--gold); }
+.btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.btn-ghost:hover { background: var(--surface); border-color: var(--ink); }
 
 /* ─── NAV ─── */
 nav {
@@ -652,15 +102,43 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 20px 0;
-  transition: background 0.3s, padding 0.3s;
+  background: var(--bg);
+  transition: box-shadow 0.3s;
 }
-nav.scrolled {
-  background: rgba(13,27,42,0.96);
-  backdrop-filter: blur(12px);
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
+nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px rgba(20, 26, 33, 0.06); }
+
+.topbar {
+  background: var(--accent);
+  max-height: 60px;
+  overflow: hidden;
+  transition: max-height 0.3s;
 }
+nav.scrolled .topbar { max-height: 0; }
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 24px;
+}
+.topbar-group { display: flex; gap: 28px; }
+
+.topbar a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--on-accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.topbar a:hover { opacity: 0.75; }
+.topbar svg { flex-shrink: 0; color: var(--on-accent-muted); }
+
+.nav-main { padding: 18px 24px; transition: padding 0.3s; }
+nav.scrolled .nav-main { padding: 12px 24px; }
 
 .nav-inner {
   display: flex;
@@ -669,33 +147,32 @@ nav.scrolled {
 }
 
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: var(--cream);
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
+  color: var(--ink);
+  line-height: 1.2;
 }
-.nav-logo span { color: var(--gold); }
+.nav-logo strong { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+.nav-logo span { font-size: 0.78rem; color: var(--muted); }
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 36px;
   list-style: none;
 }
 .nav-links a {
-  color: var(--text-muted);
+  color: var(--ink);
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  transition: color 0.2s;
+  font-size: 0.98rem;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
 }
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover { color: var(--accent); border-color: var(--accent); }
 
-.nav-cta {
-  padding: 10px 22px;
-  font-size: 0.85rem;
-}
+.nav-cta { padding: 11px 22px; font-size: 0.9rem; }
 
 .burger {
   display: none;
@@ -707,56 +184,422 @@ nav.scrolled {
 .burger span {
   display: block;
   width: 24px;
-  height: 1.5px;
-  background: var(--text);
-  transition: 0.3s;
+  height: 2px;
+  background: var(--ink);
 }
 
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* ─── HERO ─── */
+#hero { padding: 140px 0 0; border-bottom: 1px solid var(--line); }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+.hero-content { padding: 24px 0 48px; }
+
+#hero h1 { margin-bottom: 24px; }
+
+.hero-sub {
+  font-size: 1.12rem;
+  color: var(--muted);
+  max-width: 580px;
+  margin-bottom: 40px;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero-photo {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 78%;
+  background: var(--accent);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.hero-photo img {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  display: block;
+}
+
+
+/* ─── DIRECTIONS ─── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 36px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: var(--accent); }
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+.card-icon { color: var(--accent); line-height: 0; }
+.card-icon svg { width: 30px; height: 30px; }
+.card-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 4px 12px;
+}
+
+.card h3 { margin-bottom: 10px; }
+.card p { color: var(--muted); font-size: 0.97rem; }
+
+.card ul {
+  list-style: none;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.card li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.card li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.42em;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+}
+
+/* ─── PROCESS ─── */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 64px;
+  margin-top: 40px;
+}
+.process-step {
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+.process-step h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+.process-step h3 span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.process-step p { color: var(--muted); }
+
+/* ─── EXPERIENCE ─── */
+.exp-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 72px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.exp-photo-frame {
+  position: relative;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow: hidden;
+  padding-top: 0;
+}
+.exp-photo-frame::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80%;
+  background: var(--accent);
+  border-radius: var(--radius);
+}
+.exp-photo-frame img {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.exp-photo-caption { margin-top: 16px; }
+.exp-photo-caption strong { display: block; font-size: 1.1rem; }
+.exp-photo-caption span { color: var(--muted); font-size: 0.92rem; }
+
+.exp-item {
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+.exp-item:last-child { border-bottom: 1px solid var(--line); }
+.exp-meta {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.exp-item h3 { margin-bottom: 12px; }
+.exp-item p { color: var(--muted); }
+
+/* ─── PRINCIPLES ─── */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.principle {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+}
+.principle-icon { color: var(--accent); margin-bottom: 20px; }
+.principle h3 { font-size: 1.08rem; margin-bottom: 10px; }
+.principle p { color: var(--muted); font-size: 0.93rem; }
+
+/* ─── FAQ ─── */
+.faq-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.faq-layout .faq-intro p { color: var(--muted); margin-top: 16px; }
+
+.faq-list { border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 24px 48px 24px 0;
+  position: relative;
+  font-size: 1.08rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--accent); }
+.faq-item summary::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s;
+}
+.faq-item[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.faq-item p {
+  padding: 0 48px 24px 0;
+  color: var(--muted);
+}
+
+/* ─── HOW TO START ─── */
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.how-step {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+}
+.how-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.how-step h3 { margin-bottom: 10px; }
+.how-step p { color: var(--muted); font-size: 0.95rem; }
+
+/* ─── CONTACT ─── */
+#contact {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+#contact .section-label { color: var(--on-accent-muted); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.contact-info h3 { margin-bottom: 12px; }
+.contact-info p { color: var(--on-accent-muted); margin-bottom: 32px; }
+
+.contact-links { display: flex; flex-direction: column; gap: 14px; }
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--on-accent);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.contact-link:hover { opacity: 0.75; }
+.contact-link-icon {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(243, 246, 247, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ─── FORM ─── */
+.form-card {
+  background: var(--surface);
+  color: var(--ink);
+  padding: 44px 40px;
+  border-radius: var(--radius);
+}
+.form-card h3 { margin-bottom: 6px; }
+.form-card .form-hint { color: var(--muted); font-size: 0.92rem; margin-bottom: 28px; }
+
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.97rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: var(--accent); }
+.form-group textarea { height: 100px; resize: none; }
+
+.form-submit { width: 100%; margin-top: 8px; }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 24px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--accent-dark);
+  color: var(--on-accent-muted);
+  padding: 32px 0;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.92rem;
+}
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  color: var(--on-accent-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--on-accent); }
 
 /* ─── MOBILE ─── */
+@media (max-width: 1000px) {
+  .principles-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
-  .about-grid,
-  .why-grid,
-  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-
-  .cards-grid { grid-template-columns: 1fr; gap: 2px; }
-  .how-steps { grid-template-columns: 1fr; }
-
   .nav-links, .nav-cta-wrap { display: none; }
   .burger { display: flex; }
+  .topbar .topbar-email { display: none; }
 
-  .hero-badge { gap: 32px; }
-  #hero .container { grid-template-columns: 1fr; gap: 0; }
-  .hero-photo-col { display: none; }
+  #hero { padding-top: 150px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 0; }
+  .hero-content { padding-bottom: 48px; }
+  .hero-photo { max-width: 360px; margin: 0 auto; width: 100%; }
 
+  .cards-grid,
+  .process-grid,
+  .how-steps,
+  .contact-grid { grid-template-columns: 1fr; }
   .contact-grid { gap: 40px; }
+
+  .exp-layout,
+  .faq-layout { grid-template-columns: 1fr; gap: 40px; }
+  .exp-photo { max-width: 360px; }
 }
 
 @media (max-width: 600px) {
-  section { padding: 64px 0; }
-  .form-card { padding: 32px 24px; }
-  .hero-cta { display: flex; flex-direction: column; align-items: flex-start; }
-  .how-step { padding: 28px 24px; }
+  section { padding: 72px 0; }
+  .card { padding: 28px 22px; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 32px 22px; }
+  .topbar-group { gap: 20px; }
+  .topbar-label { display: none; }
+  .hero-cta .btn { width: 100%; text-align: center; }
+  .hero-sub { font-size: 1rem; }
   .form-group input,
   .form-group textarea { font-size: 16px; } /* предотвращает автозум на iOS */
-  .hero-badge { flex-direction: column; gap: 20px; }
-  .warning-box { padding: 20px 24px; }
-  .card { padding: 28px 24px; }
 }
 </style>
 </head>
@@ -764,13 +607,40 @@ nav.scrolled {
 
 <!-- ─── NAV ─── -->
 <nav id="nav">
-  <div class="container">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-group">
+        <a href="tel:+79332036318">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+7 (933) 203-63-18</span>
+        </a>
+        <a href="mailto:zlobin.ivan1@yandex.ru" class="topbar-email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>zlobin.ivan1@yandex.ru</span>
+        </a>
+      </div>
+      <div class="topbar-group">
+        <a href="https://t.me/zlobin_lawyer" target="_blank" aria-label="Telegram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span class="topbar-label">Telegram</span>
+        </a>
+        <a href="https://wa.me/79332036318" target="_blank" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span class="topbar-label">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container nav-main">
     <div class="nav-inner">
-      <a class="nav-logo" href="#hero">Иван Злобин</a>
+      <a class="nav-logo" href="#hero">
+        <strong>Иван Злобин</strong>
+        <span>Юрист по банкротным спорам</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="#for-you">Кому подходит</a></li>
-        <li><a href="#services">Услуги</a></li>
+        <li><a href="#for-you">Направления</a></li>
         <li><a href="#why">Обо мне</a></li>
+        <li><a href="#faq">Вопросы</a></li>
         <li><a href="#how">Как начать</a></li>
       </ul>
       <div class="nav-cta-wrap">
@@ -785,163 +655,250 @@ nav.scrolled {
 
 <!-- ─── HERO ─── -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-lines"></div>
-  <div class="container">
-    <!-- Левая колонка: текст -->
+  <div class="container hero-grid">
     <div class="hero-content">
-      <h1>Защита от субсидиарной ответственности и оспаривания сделок в&nbsp;банкротстве</h1>
+      <h1>Взыскание долгов и&nbsp;защита в&nbsp;банкротных спорах</h1>
       <p class="hero-sub">
-       Оценю риски и помогу выстроить защиту в&nbsp;арбитражном суде.
-        <strong>6 лет работал на стороне управляющих и банков-кредиторов</strong> —
-        знаю, как строится позиция против ответчиков и где она уязвима.
+        Помогаю кредиторам вернуть деньги, а&nbsp;директорам, собственникам и&nbsp;контрагентам должника — защититься от&nbsp;требований в&nbsp;деле о&nbsp;банкротстве.
+        <strong>6&nbsp;лет работал на стороне банков-кредиторов и арбитражных управляющих</strong> —
+        знаю, какие доводы в&nbsp;банкротных спорах убеждают суд, а&nbsp;какие нет.
       </p>
       <div class="hero-cta">
         <a href="#contact" class="btn">Обсудить мою ситуацию</a>
+        <a href="#for-you" class="btn btn-ghost">Направления работы</a>
       </div>
     </div>
-
-    <!-- Правая колонка: фото -->
-    <div class="hero-photo-col">
-      <img src="photo-Photoroom.png" alt="Иван Злобин">
-      <div class="hero-photo-caption">
-        <strong>Иван Злобин</strong>
-        <span>Юрист по банкротным спорам</span>
-      </div>
+    <div class="hero-photo">
+      <img src="photo-hero.png" alt="Иван Злобин">
     </div>
   </div>
 </section>
 
-<!-- ─── FOR YOU ─── -->
+<!-- ─── DIRECTIONS ─── -->
 <section id="for-you">
   <div class="container">
-    <div class="section-label">Кому подходит</div>
-    <h2 class="reveal">Вам нужна помощь, если:</h2>
+    <div class="section-label">Направления</div>
+    <h2>Чем я могу помочь</h2>
 
     <div class="cards-grid">
-      <div class="card reveal">
-        <div class="card-num">01</div>
-        <h3>Субсидиарная ответственность</h3>
-        <p>Вашу компанию или вас лично привлекают к субсидиарной ответственности по обязательствам должника.</p>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+          </div>
+          <div class="card-tag">Кредиторам</div>
+        </div>
+        <h3>Взыскание долгов через банкротство</h3>
+        <p>Должник не платит, а исполнительное производство ничего не дало? Банкротство позволяет найти выведенные активы и вернуть деньги.</p>
+        <ul>
+          <li>Инициирую банкротство должника</li>
+          <li>Включу ваше требование в реестр</li>
+          <li>Оспорю сделки по выводу имущества</li>
+          <li>Привлеку директора и собственников должника к субсидиарной ответственности</li>
+        </ul>
       </div>
-      <div class="card reveal">
-        <div class="card-num">02</div>
-        <h3>Оспаривание сделки</h3>
-        <p>Арбитражный управляющий оспаривает сделку, по которой вы получили деньги или имущество, и требует всё вернуть в конкурсную массу.</p>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="card-tag">Директорам и собственникам</div>
+        </div>
+        <h3>Защита от субсидиарной ответственности</h3>
+        <p>Вас или вашу компанию привлекают к ответственности по долгам компании-банкрота?</p>
+        <ul>
+          <li>Оценю обоснованность требований</li>
+          <li>Выработаю оптимальную стратегию защиты</li>
+          <li>Соберу доказательства вашей добросовестности</li>
+          <li>Оспорю основания и размер ответственности</li>
+        </ul>
       </div>
-    </div>
-
-    <div class="warning-box reveal">
-      <div class="warning-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-          <line x1="12" y1="9" x2="12" y2="13"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
-        </svg>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+          </div>
+          <div class="card-tag">Контрагентам должника</div>
+        </div>
+        <h3>Защита от оспаривания сделок</h3>
+        <p>Арбитражный управляющий оспаривает сделку, по которой вы получили деньги или имущество, и требует всё вернуть в конкурсную массу?</p>
+        <ul>
+          <li>Проверю основания и сроки оспаривания</li>
+          <li>Докажу реальность и рыночность сделки</li>
+          <li>Сохраню полученное имущество и деньги</li>
+        </ul>
       </div>
-      <p>
-        Это споры с <strong>высокими ставками</strong>. Субсидиарная ответственность может составлять десятки и сотни миллионов рублей — для компании это угроза платёжеспособности, для контролирующих лиц — <strong>личная ответственность, которая не списывается даже через банкротство</strong>. Если сделку признают недействительной — придётся вернуть всё полученное. Но далеко не каждое требование обоснованно — и грамотная защита часто решает исход дела.      </p>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+          </div>
+          <div class="card-tag">Всем участникам дела</div>
+        </div>
+        <h3>Другие банкротные споры</h3>
+        <p>Сопровождаю любые споры в деле о банкротстве — на стороне кредиторов, должников и других участников.</p>
+        <ul>
+          <li>Возражения против требований других кредиторов</li>
+          <li>Жалобы на действия арбитражного управляющего</li>
+          <li>Споры о торгах и продаже имущества</li>
+          <li>Разногласия по залогу и текущим платежам</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SERVICES ─── -->
-<section id="services">
+<!-- ─── PROCESS ─── -->
+<section id="services" class="section-alt">
   <div class="container">
-    <div class="section-label">Услуги</div>
-    <h2 class="reveal">Полное сопровождение спора<br>от первой консультации до результата</h2>
+    <div class="section-label">Как я веду спор</div>
+    <h2>Сложный спор решается так же, как любая сложная задача&nbsp;— последовательно и по шагам</h2>
 
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-body">
-          <h3>Анализ документов и оценка рисков</h3>
-          <p>Изучу заявление, определение суда и материалы дела. Дам честную оценку: каковы реальные риски и есть ли шансы на победу.</p>
-        </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <h3><span>01</span>Разбираюсь в ситуации</h3>
+        <p>Изучаю документы и материалы дела, выясняю, чего вы хотите добиться. Оцениваю перспективы и возможные исходы. Затем вместе решаем, стоит ли вообще идти в суд.</p>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-body">
-          <h3>Выработка стратегии защиты</h3>
-          <p>Подберу оптимальную линию защиты с учётом актуальной судебной практики и позиций Верховного суда.</p>
-        </div>
+      <div class="process-step">
+        <h3><span>02</span>Выстраиваю стратегию</h3>
+        <p>Подбираю судебную практику, продумываю свою позицию и аргументы другой стороны. Готовлю запасной план на случай, если что-то пойдёт не так, и сразу называю стоимость работы.</p>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-body">
-          <h3>Подготовка процессуальных документов</h3>
-          <p>Подготовлю отзыв на заявление, соберу и оформлю все необходимые доказательства, направлю ходатайства.</p>
-        </div>
+      <div class="process-step">
+        <h3><span>03</span>Веду дело</h3>
+        <p>Готовлю документы, собираю доказательства, участвую в заседаниях. Держу вас в курсе каждого шага и согласовываю с вами ключевые решения.</p>
       </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-body">
-          <h3>Представительство в суде</h3>
-          <p>Приму участие в судебных заседаниях в арбитражном суде — от первого заседания до вынесения судебного акта.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">05</div>
-        <div class="step-body">
-          <h3>Обжалование</h3>
-          <p>Если результат первой инстанции неудовлетворительный — обжалую решение суда в апелляции и кассации.</p>
-        </div>
+      <div class="process-step">
+        <h3><span>04</span>Довожу до результата</h3>
+        <p>Результат — это не просто решение суда, а полученные вами деньги или снятые с вас требования. Если решение первой инстанции нас не устраивает, обжалую его в апелляции и кассации. А при взыскании долга довожу дело до реального получения денег.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── WHY ME ─── -->
+<!-- ─── EXPERIENCE ─── -->
 <section id="why">
   <div class="container">
     <div class="section-label">Обо мне</div>
-    <h2 class="reveal">Мой опыт</h2>
+    <h2>Мой опыт</h2>
 
-    <div class="why-layout">
-
-      <!-- ФОТО -->
-      <div class="why-photo-wrap reveal">
-        <div class="why-photo">
-          <img src="photo.png?v=2" alt="Иван Злобин">
+    <div class="exp-layout">
+      <div class="exp-photo">
+        <div class="exp-photo-frame">
+          <img src="photo-experience.png" alt="Иван Злобин">
         </div>
-        <div class="why-photo-caption">
+        <div class="exp-photo-caption">
           <strong>Иван Злобин</strong>
           <span>Юрист · Банкротные споры</span>
         </div>
       </div>
 
-      <!-- КАРТОЧКИ -->
-      <div class="why-grid">
-        <div class="why-card">
-          <p>Два года в Юридической группе «Стрижак и Партнёры» (входит в топ-10 федерального рейтинга Право.ru 300 в категории «Банкротство»). Сопровождал процедуры банкротства на стороне арбитражных управляющих, включая банкротство авиакомпании. Выиграл спор по утверждению положения о торгах акциями аэропорта.</p>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-meta">2 года</div>
+          <h3>Юридическая группа «Стрижак и Партнёры»</h3>
+          <p>Входит в топ-10 федерального рейтинга Право.ru 300 в категории «Банкротство». Сопровождал процедуры банкротства на стороне арбитражных управляющих, включая банкротство авиакомпании.</p>
         </div>
-        <div class="why-card">
-          <p>Более трёх лет в структуре крупного системообразующего банка. Вёл банкротные процедуры на стороне кредитора, в том числе банкротство крупнейшего в России троллейбусного завода. Добился признания недействительными сделок на миллиарды рублей.</p>
+        <div class="exp-item">
+          <div class="exp-meta">Более 3 лет</div>
+          <h3>Крупный системообразующий банк</h3>
+          <p>Вёл банкротные процедуры на стороне кредитора, в том числе банкротство крупнейшего в России троллейбусного завода. Добился признания недействительными сделок на сотни миллионов рублей.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
+<!-- ─── PRINCIPLES ─── -->
+<section id="principles" class="section-alt">
+  <div class="container">
+    <div class="section-label">Принципы работы</div>
+    <h2>Почему со мной спокойно</h2>
+
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="principle-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <h3>Честная оценка до начала работы</h3>
+        <p>Оценю шансы на успех ещё до заключения договора. Если дело бесперспективно — так и скажу.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+        </div>
+        <h3>Вы всегда в курсе</h3>
+        <p>Сообщаю о каждом шаге: что подано, что решил суд и что будет дальше.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Прямая связь</h3>
+        <p>Связываетесь со мной напрямую — в Telegram, WhatsApp или по телефону, без секретарей и менеджеров.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Конфиденциальность</h3>
+        <p>Информация о вашем деле и ваших активах не выходит за пределы нашей работы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="container faq-layout">
+    <div class="faq-intro">
+      <div class="section-label">Вопросы</div>
+      <h2>Частые вопросы</h2>
+      <p>Не нашли ответа? Напишите мне — отвечу лично.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Можно ли взыскать долг, если у должника нет денег и имущества?</summary>
+        <p>Часто да. В банкротстве можно оспорить сделки, по которым должник заранее вывел имущество, и привлечь директора и собственников к субсидиарной ответственности — тогда долг они платят лично.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Кого могут привлечь к субсидиарной ответственности?</summary>
+        <p>Контролирующих должника лиц: директора, участников, а также тех, кто фактически определял действия компании — даже без формальной должности.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Управляющий оспаривает сделку со мной. Что делать?</summary>
+        <p>Не затягивать. Важно сразу проверить основания и сроки оспаривания и собрать доказательства реальности и рыночности сделки. Пришлите заявление управляющего — я бесплатно оценю перспективы.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли обратиться, если суд уже вынес решение?</summary>
+        <p>Да. Подключусь на любой стадии спора, в том числе для обжалования в апелляции и кассации.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Сколько стоят услуги?</summary>
+        <p>Стоимость зависит от сложности спора и объёма работы. Назову её после бесплатного изучения ситуации — до того, как вы примете решение.</p>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- ─── HOW ─── -->
-<section id="how">
+<section id="how" class="section-alt">
   <div class="container">
     <div class="section-label">Как начать</div>
-    <h2 class="reveal">Три простых шага</h2>
+    <h2>Три простых шага</h2>
 
     <div class="how-steps">
-      <div class="how-step reveal">
+      <div class="how-step">
         <div class="how-num">1</div>
         <h3>Свяжитесь со мной</h3>
-        <p>Напишите в Telegram или на почту — можно сразу приложить заявление управляющего. Или оставьте номер в форме ниже, я сам перезвоню.</p>
+        <p>Напишите в Telegram, WhatsApp или на почту — можно сразу приложить документы. Или оставьте номер в форме ниже, я сам перезвоню.</p>
       </div>
-      <div class="how-step reveal">
+      <div class="how-step">
         <div class="how-num">2</div>
         <h3>Получите оценку</h3>
         <p>Бесплатно изучу вашу ситуацию и дам честную оценку: есть ли перспективы и что можно сделать.</p>
       </div>
-      <div class="how-step reveal">
+      <div class="how-step">
         <div class="how-num">3</div>
         <h3>Примите решение</h3>
         <p>Обсудим стратегию и стоимость. Вы решаете, работаем или нет. Никаких обязательств на этапе консультации.</p>
@@ -954,34 +911,42 @@ nav.scrolled {
 <section id="contact">
   <div class="container">
     <div class="section-label">Контакты</div>
-    <h2 class="reveal">Обсудим вашу ситуацию бесплатно</h2>
+    <h2>Обсудим вашу ситуацию бесплатно</h2>
 
     <div class="contact-grid">
-      <div class="contact-info reveal">
+      <div class="contact-info">
         <h3>Напишите напрямую</h3>
         <p>Можете сразу приложить заявление или другие документы — это ускорит оценку ситуации.</p>
 
         <div class="contact-links">
           <a href="https://t.me/zlobin_lawyer" class="contact-link" target="_blank">
             <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-              </svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
             </div>
             <span>Telegram: @zlobin_lawyer</span>
           </a>
+          <a href="https://wa.me/79332036318" class="contact-link" target="_blank">
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </div>
+            <span>WhatsApp: +7 (933) 203-63-18</span>
+          </a>
           <a href="mailto:zlobin.ivan1@yandex.ru" class="contact-link">
-            <div class="contact-link-icon">@</div>
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
             <span>zlobin.ivan1@yandex.ru</span>
           </a>
           <a href="tel:+79332036318" class="contact-link">
-            <div class="contact-link-icon">✆</div>
+            <div class="contact-link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
             <span>+7 (933) 203-63-18</span>
           </a>
         </div>
       </div>
 
-      <div class="form-card reveal">
+      <div class="form-card">
         <div id="formHeader">
           <h3>Или оставьте номер</h3>
           <p class="form-hint">Я перезвоню в ближайшее время</p>
@@ -999,15 +964,15 @@ nav.scrolled {
             <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
           </div>
           <div class="form-group">
-            <label>Кратко опишите ситуацию <span style="opacity:0.5;font-size:0.75rem;text-transform:none;letter-spacing:0">(необязательно)</span></label>
-            <textarea name="situation" placeholder="Субсидиарная ответственность / оспаривание сделки / другое..."></textarea>
+            <label>Кратко опишите ситуацию <span style="opacity:0.5;font-weight:400">(необязательно)</span></label>
+            <textarea name="situation" placeholder="Взыскание долга / субсидиарная ответственность / оспаривание сделки / другое..."></textarea>
           </div>
           <button type="submit" class="btn form-submit">Перезвоните мне</button>
         </form>
         <div class="form-success" id="formSuccess">
           Спасибо! Я перезвоню вам в ближайшее время.
         </div>
-        <div class="form-success" id="formError" style="display:none;color:#e57373;">
+        <div class="form-success" id="formError" style="display:none;color:#B3261E;">
           Что-то пошло не так. Попробуйте ещё раз или позвоните напрямую.
         </div>
       </div>
@@ -1019,9 +984,10 @@ nav.scrolled {
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-name">Иван Злобин, юрист по банкротным спорам</div>
+      <div>Иван Злобин, юрист по банкротным спорам</div>
       <div class="footer-links">
         <a href="https://t.me/zlobin_lawyer">Telegram</a>
+        <a href="https://wa.me/79332036318">WhatsApp</a>
         <a href="mailto:zlobin.ivan1@yandex.ru">E-mail</a>
         <a href="tel:+79332036318">Телефон</a>
       </div>
@@ -1035,17 +1001,6 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
-
-// ─── Intersection Observer for reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal, .step, .why-card, .why-card-conclusion').forEach(el => observer.observe(el));
 
 // ─── Form submit via Web3Forms
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -1084,17 +1039,12 @@ document.getElementById('burger').addEventListener('click', () => {
     const isVisible = navLinks.style.display === 'flex';
     navLinks.style.cssText = isVisible
       ? ''
-      : 'display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(13,27,42,0.98);padding:24px;gap:20px;border-bottom:1px solid rgba(201,168,76,0.2);backdrop-filter:blur(12px)';
+      : 'display:flex;flex-direction:column;position:fixed;top:' + nav.offsetHeight + 'px;left:0;right:0;background:#F7F5F0;padding:24px;gap:20px;border-bottom:1px solid #DCD7CD;box-shadow:0 8px 24px rgba(20,26,33,0.08)';
   }
 });
 
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', closeMenu);
-});
-
-// ─── Stagger cards
-document.querySelectorAll('.card, .how-step').forEach((el, i) => {
-  el.style.transitionDelay = `${i * 0.1}s`;
 });
 </script>
 
