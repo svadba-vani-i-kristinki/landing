@@ -148,11 +148,14 @@ nav.scrolled .nav-main { padding: 12px 24px; }
 
 .nav-logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
   color: var(--ink);
   line-height: 1.2;
 }
+.nav-mark { width: 34px; height: 40px; flex-shrink: 0; color: var(--accent); }
+.nav-logo-text { display: flex; flex-direction: column; }
 .nav-logo strong { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
 .nav-logo span { font-size: 0.78rem; color: var(--muted); }
 
@@ -634,8 +637,11 @@ footer {
   <div class="container nav-main">
     <div class="nav-inner">
       <a class="nav-logo" href="#hero">
-        <strong>Иван Злобин</strong>
-        <span>Юрист по банкротным спорам</span>
+        <svg class="nav-mark" viewBox="10 4 80 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="10" stroke-linejoin="miter" stroke-miterlimit="2"><path d="M26 10H58C74 10 80 22 74 32C70 40 62 44 52 44M52 44C68 44 82 50 82 63C82 76 71 82 56 82H20"/><path d="M33 69L20 82L33 95"/></g></svg>
+        <div class="nav-logo-text">
+          <strong>Иван Злобин</strong>
+          <span>Юрист по банкротным спорам</span>
+        </div>
       </a>
       <ul class="nav-links">
         <li><a href="#for-you">Направления</a></li>
@@ -768,7 +774,7 @@ footer {
         <p>Готовлю документы, собираю доказательства, участвую в заседаниях. Держу вас в курсе каждого шага и согласовываю с вами ключевые решения.</p>
       </div>
       <div class="process-step">
-        <h3><span>04</span>Довожу до результата</h3>
+        <h3><span>04</span>Добиваюсь результата</h3>
         <p>Результат — это не просто решение суда, а полученные вами деньги или снятые с вас требования. Если решение первой инстанции нас не устраивает, обжалую его в апелляции и кассации. А при взыскании долга довожу дело до реального получения денег.</p>
       </div>
     </div>
