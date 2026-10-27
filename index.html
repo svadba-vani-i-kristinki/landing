@@ -232,10 +232,13 @@ nav.scrolled .nav-main { padding: 12px 24px; }
   background: var(--accent);
   border-radius: var(--radius) var(--radius) 0 0;
 }
+picture { display: contents; }
+
 .hero-photo img {
   position: relative;
   width: 100%;
   max-width: 440px;
+  height: auto;
   display: block;
 }
 
@@ -354,6 +357,7 @@ nav.scrolled .nav-main { padding: 12px 24px; }
 .exp-photo-frame img {
   position: relative;
   width: 100%;
+  height: auto;
   display: block;
 }
 .exp-photo-caption { margin-top: 16px; }
@@ -675,7 +679,10 @@ footer {
       </div>
     </div>
     <div class="hero-photo">
-      <img src="photo-hero.png" alt="Иван Злобин">
+      <picture>
+        <source srcset="photo-hero.webp" type="image/webp">
+        <img src="photo-hero.png" alt="Иван Злобин" width="880" height="1186" fetchpriority="high">
+      </picture>
     </div>
   </div>
 </section>
@@ -790,7 +797,10 @@ footer {
     <div class="exp-layout">
       <div class="exp-photo">
         <div class="exp-photo-frame">
-          <img src="photo-experience.png" alt="Иван Злобин">
+          <picture>
+            <source srcset="photo-experience.webp" type="image/webp">
+            <img src="photo-experience.png" alt="Иван Злобин" width="760" height="950" loading="lazy">
+          </picture>
         </div>
         <div class="exp-photo-caption">
           <strong>Иван Злобин</strong>
